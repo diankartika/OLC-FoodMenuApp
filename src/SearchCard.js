@@ -12,7 +12,7 @@ const SearchCard = () => {
 
     return (
         <form className='SearchCard'>
-            <input className='input-col' type='text' onChange={handleInputChange} value={inputValue} placeholder='Search recipes'></input>
+            <input className='input-col' type='text' onChange={handleInputChange} value={inputValue} placeholder ='Search recipes' size='30'></input>
             <button type='submit'>Search</button>
         </form>
 

@@ -1,7 +1,11 @@
-.input-col {
-    font-size: 16px;
+input {
+    font-size: 12px;
     border: none;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 20px;
     margin-right: 5px;
+    border-radius: 2px;
 }
 
 .SearchCard {
@@ -11,8 +15,10 @@
 }
 
 button {
-    background-color: aqua;
+    background-color: #f76301;
+    color: white;
     border: none;
-    border-radius: 1px;
-    font-size: 16px;
+    padding: 9px 10px 9px 10px;
+    border-radius: 2px;
+    font-size: 12px;
 }
