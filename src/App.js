@@ -1,12 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
 import './App.css';
-import SearchCard from './SearchCard';
 
 function App() {
   return (
     <div className="App">
-      <h1 className='App-header'>Favorites</h1>
-      <SearchCard />
+      <Header />
+      <Home />
+      <Footer />
     </div>
   );
 }
