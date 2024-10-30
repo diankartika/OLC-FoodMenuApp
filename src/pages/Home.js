@@ -1,14 +1,37 @@
-import React from 'react';
-import SearchCard from '../components/SearchCard';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import RecipeList from '../components/RecipeList';
 
-function Home() {
+const Home = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    // Fetch recipes from the API when the component mounts
+    const fetchRecipes = async () => {
+      try {
+        const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=YOUR_API_KEY`);
+        setRecipes(response.data.results);
+      } catch (error) {
+        console.error('Error fetching recipes:', error);
+      }
+    };
+    
+    fetchRecipes();
+  }, [searchQuery]);
+
   return (
-    <div className="home">
-      <h1>Favorites</h1>
-      <SearchCard />
-      {/* Anda bisa menambahkan lebih banyak SearchCard di sini atau menggunakan map untuk mendaftar item dari API */}
+    <div>
+      <h2>Favorites</h2>
+      <input 
+        type="text" 
+        placeholder="Search recipes" 
+        onChange={(e) => setSearchQuery(e.target.value)} 
+      />
+      <button onClick={() => setSearchQuery(searchQuery)}>Search</button>
+      <RecipeList recipes={recipes} />
     </div>
   );
-}
+};
 
 export default Home;
