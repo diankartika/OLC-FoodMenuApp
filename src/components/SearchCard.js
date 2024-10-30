@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './SearchCard.css';
+import React, { Component }  from 'react';
 
 const SearchCard = () => {
     const [inputValue, setInputValue] = useState('')
