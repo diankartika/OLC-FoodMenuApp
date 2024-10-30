@@ -1,0 +1,18 @@
+.input-col {
+    font-size: 16px;
+    border: none;
+    margin-right: 5px;
+}
+
+.SearchCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: aqua;
+    border: none;
+    border-radius: 1px;
+    font-size: 16px;
+}
