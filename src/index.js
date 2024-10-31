@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeContext } from './App'
-import ContextComponent from './ContextComponent';
+import ContextComponent from './context/ContextComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

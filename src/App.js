@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import './App.css';
 import SearchCard from './components/SearchCard';
 import SearchFavorite from './components/SearchFavorite';
-import ContextComponent from './ContextComponent';
+import ContextComponent from './context/ContextComponent';
 import Favorites from './components/Favorites';
 import Gallery from './components/Gallery';
 import Header from './components/Header'

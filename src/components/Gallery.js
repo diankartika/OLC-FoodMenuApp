@@ -4,7 +4,8 @@ import './gallerybutton.css';
 
 function Gallery({ recipes, addToFavorites }) {
   return (
-    <div className="gallery">
+    <div className='content'>
+      <div className="gallery">
       {recipes.map(recipe => (
         <div className="recipe-gallery" key={recipe.id}>
           <div className='recipe-image'>
@@ -18,6 +19,7 @@ function Gallery({ recipes, addToFavorites }) {
           </div>  
         </div>
       ))}
+    </div>
     </div>
   );
 }
