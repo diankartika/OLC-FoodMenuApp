@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ theme, handleToggleTheme }) => {
   return (
     <header>
-      <h1>Search recipe - Theme 1</h1>
-      <button>Change Theme</button>
+      <button className="search" onClick={handleToggleTheme}>Change Theme</button>
     </header>
   );
 };

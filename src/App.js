@@ -1,17 +1,31 @@
 import React, { createContext, useState, useEffect } from 'react';
 import './App.css';
 import SearchCard from './components/SearchCard';
+import SearchFavorite from './components/SearchFavorite';
 import ContextComponent from './ContextComponent';
+import Favorites from './components/Favorites';
+import Gallery from './components/Gallery';
+import Header from './components/Header'
 
 export const ThemeContext = createContext();
 
 function App() {
-  const [theme, setTheme] = useState('#f76301');
+  const [theme, setTheme] = useState('#fa6400');
   const [recipes, setRecipes] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  
+  const [inputValue, setInputValue] = useState('');
+  const [favoritesInputValue, setFavoritesInputValue] = useState(''); // New state for filtering favorites
+
   const handleToggleTheme = () => {
     setTheme(theme === '#f76301' ? 'dark' : '#f76301');
+  };
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value.toLowerCase());
+  };
+
+  const handleFavoritesInputChange = (e) => {
+    setFavoritesInputValue(e.target.value.toLowerCase());
   };
 
   useEffect(() => {
@@ -41,35 +55,33 @@ function App() {
     setRecipes([...recipes, recipe]);
   };
 
+  const filteredRecipes = recipes.filter(recipe =>
+    recipe.title.toLowerCase().includes(inputValue)
+  );
+
+  const filteredFavorites = favorites.filter(recipe =>
+    recipe.title.toLowerCase().includes(favoritesInputValue)
+  );
+
   return (
     <ThemeContext.Provider value={theme}>
       <div className="App">
-        <button onClick={handleToggleTheme}>Change Theme</button>
+        <Header theme={theme} handleToggleTheme={handleToggleTheme} />
         
         <h1 className="App-header">Favorites</h1>
 
-        <SearchCard />
-        <div className="favorites">
-          {favorites.map(favRecipe => (
-            <div className="recipe-gallery" key={favRecipe.id}>
-              <img src={favRecipe.image} alt={favRecipe.title} />
-              <h3>{favRecipe.title}</h3>
-              <button onClick={() => removeFromFavorites(favRecipe)}>Remove from Favorites</button>
-            </div>
-          ))}
-        </div>
+        {favorites.length > 0 && (
+          <>
+            <SearchFavorite inputValue={favoritesInputValue} handleInputChange={handleFavoritesInputChange} />
+            <Favorites favorites={filteredFavorites} removeFromFavorites={removeFromFavorites} />
+          </>
+        )}
+
         <ContextComponent />
-        
+
+        <SearchCard inputValue={inputValue} handleInputChange={handleInputChange} />
         {recipes.length > 0 && (
-          <div className="gallery">
-            {recipes.map((recipe) => (
-              <div className="recipe-gallery" key={recipe.id}>
-                {recipe.image && <img src={recipe.image} alt={recipe.title} />}
-                <h3>{recipe.title}</h3>
-                <button onClick={() => addToFavorites(recipe)}>Add to Favorites</button>
-              </div>
-            ))}
-          </div>
+          <Gallery recipes={filteredRecipes} addToFavorites={addToFavorites} />
         )}
       </div>
     </ThemeContext.Provider>
