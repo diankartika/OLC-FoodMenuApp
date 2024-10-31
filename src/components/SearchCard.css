@@ -14,11 +14,11 @@ input {
     justify-content: center;
 }
 
-button {
+button.search {
     background-color: #f76301;
     color: white;
     border: none;
     padding: 9px 10px 9px 10px;
     border-radius: 2px;
     font-size: 12px;
-}
+  }
