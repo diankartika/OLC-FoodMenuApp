@@ -1,6 +1,5 @@
-import { useState } from "react";
 import './SearchCard.css';
-import React, { Component }  from 'react';
+import React from 'react';
 
 const SearchCard = ({ inputValue, handleInputChange }) => {
   const isDisabled = !inputValue; 
