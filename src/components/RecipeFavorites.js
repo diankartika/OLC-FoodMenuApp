@@ -8,7 +8,7 @@ function Favorites({ favorites, removeFromFavorites }) {
 
   return (
     <div className='content'>
-      <div className="favorites">
+      <div className="gallery">
         {favorites.map(favRecipe => (
           <div className="recipe-gallery" key={favRecipe.id}>
             <div className='recipe-image'>

@@ -10,7 +10,7 @@ button {
     cursor: pointer;
     padding: 5% 48px;
     gap: 10px;
-    opacity: 0px;
+    opacity: 1px;
 }
 
 button:hover {
