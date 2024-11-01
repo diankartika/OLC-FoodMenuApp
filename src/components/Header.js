@@ -1,11 +1,21 @@
-import React from 'react';
+// Header.js
+import React, { useContext } from 'react';
+import { ThemeContext } from '../App';
+import './Header.css';
 
-const Header = ({ theme, handleToggleTheme }) => {
+function Header() {
+  const { theme, handleToggleTheme } = useContext(ThemeContext);
+
   return (
     <header>
-      <button className="search" onClick={handleToggleTheme}>Change Theme</button>
+      <button
+        className={`theme-toggle-button ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}
+        onClick={handleToggleTheme}
+      >
+        Change Theme To {theme === 'light' ? 'Dark' : 'Light'} Mode
+      </button>
     </header>
   );
-};
+}
 
 export default Header;

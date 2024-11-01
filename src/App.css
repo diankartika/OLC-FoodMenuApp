@@ -83,3 +83,11 @@ h1 {
     transform: rotate(360deg);
   }
 }
+
+.theme-toggle-button {
+  margin-top: 20px;     /* Adjusts space from the top */
+  padding: 10px 20px;   /* Adjusts button size */
+  font-size: 1em;       /* Adjusts text size */
+  border-radius: 5px;   /* Adds rounded corners */
+  cursor: pointer;      /* Shows pointer on hover */
+}

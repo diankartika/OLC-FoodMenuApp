@@ -13,6 +13,7 @@
     padding: 5% 48px;
     gap: 10px;
     opacity: 0px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .filter button:hover {
@@ -46,25 +47,79 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 27vw;
-    height: auto; 
+    width: 30vw;
     background-color: #fff; 
     padding: 10px;
     text-align: center;
     transition: transform 0.3s ease;
+    border-radius: 15px; /* Added rounded corners */
+    overflow: hidden; /* Ensures content respects the border radius */
+    transition: background-color 0.3s ease, border 0.3s ease;
 }
 
 .recipe-image {
     width: 100%;
     height: 30vh;
+    object-fit: cover;
+    border-radius: 15px; /* Ensures image corners match the card */
 }
 
 .recipe-gallery img {
     width: 100%;
     height: 30vh;
     object-fit: cover;
-  }
+    border-radius: 15px; /* Ensures image corners match the card */
+}
 
 .recipe-gallery:hover {
     transform: scale(1.02);
+}
+
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    height: auto; /* Allow container height to expand */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (min-width: 1024px) {
+    .recipe-gallery {
+        width: 27vw;
+    }
+}
+
+/* Medium screens (2 cards per row) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .recipe-gallery {
+        width: 35vw;
+    }
+}
+
+/* Small screens (1 card per row) */
+@media (max-width: 767px) {
+    .recipe-gallery {
+        width: 90vw;
+    }
+}
+/* Container styling for responsive behavior */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Stack items in a column for small screens */
+@media (max-width: 767px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .recipe-gallery {
+        width: 90vw;
+    }
 }

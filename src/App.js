@@ -1,3 +1,4 @@
+// App.js
 import React, { createContext, useState, useEffect } from 'react';
 import './App.css';
 import SearchCard from './components/SearchCard';
@@ -5,19 +6,30 @@ import SearchFavorite from './components/SearchFavorite';
 import ContextComponent from './context/ContextComponent';
 import Favorites from './components/Favorites';
 import Gallery from './components/Gallery';
-import Header from './components/Header'
+import Header from './components/Header';
 
 export const ThemeContext = createContext();
 
 function App() {
-  const [theme, setTheme] = useState('#fa6400');
+  const [theme, setTheme] = useState('light'); // Use 'light' as the default theme
   const [recipes, setRecipes] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [favoritesInputValue, setFavoritesInputValue] = useState(''); // New state for filtering favorites
+  const [favoritesInputValue, setFavoritesInputValue] = useState('');
+
+  const themeStyles = {
+    light: {
+      backgroundColor: '#FDF0E0',
+      color: '#333333',
+    },
+    dark: {
+      backgroundColor: '#333333',
+      color: '#ffffff',
+    },
+  };
 
   const handleToggleTheme = () => {
-    setTheme(theme === '#f76301' ? 'dark' : '#f76301');
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   const handleInputChange = (e) => {
@@ -64,8 +76,8 @@ function App() {
   );
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <div className="App">
+    <ThemeContext.Provider value={{ theme, handleToggleTheme, themeStyles }}>
+      <div className="App" style={themeStyles[theme]}>
         <Header theme={theme} handleToggleTheme={handleToggleTheme} />
         
         <h1 className="App-header">Favorites</h1>
