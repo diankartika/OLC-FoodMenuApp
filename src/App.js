@@ -41,7 +41,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=6ed5b6ff75f84bdc83a577c296d0b96d")
+    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=4a88303735f3440d845420cf7a3306c0")
       .then(response => {
         if (!response.ok) {
           throw new Error("Error fetching the recipes");

@@ -10,7 +10,7 @@ const Home = () => {
     // Fetch recipes from the API when the component mounts
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=3ea56b854dae4208b367db930460567a`);
+        const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${searchQuery}&apiKey=4a88303735f3440d845420cf7a3306c0`);
         setRecipes(response.data.results);
       } catch (error) {
         console.error('Error fetching recipes:', error);
