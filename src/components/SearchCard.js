@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import './SearchCard.css';
-import React from 'react';
+import { ThemeContext } from '../App';
 
 const SearchCard = ({ inputValue, handleInputChange }) => {
+  const { theme } = useContext(ThemeContext);
+
   const isDisabled = !inputValue; 
 
   return (
@@ -14,7 +17,7 @@ const SearchCard = ({ inputValue, handleInputChange }) => {
         placeholder="Search recipes"
         size="30"
       />
-      <button className={`search ${isDisabled ? 'disabled' : ''}`} type='submit'  disabled={isDisabled}>Search</button>
+      <button className={`search ${theme === 'turqoise' ? 'orange' : 'turqoise'} ${isDisabled ? 'disabled' : ''}`} type='submit' disabled={isDisabled}>Search</button>
     </form>
   );
 };

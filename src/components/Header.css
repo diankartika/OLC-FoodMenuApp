@@ -1,4 +1,8 @@
 /* Header.css */
+.header {
+  margin-bottom: -8%;
+}
+
 .theme-toggle-button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -6,20 +10,20 @@
     border-radius: 5px;
     cursor: pointer;
     border: none;
-    transition: background-color 0.3s ease; /* Smooth color transition */
+    transition: background-color 0.3s ease; 
   }
   
-  .light-theme {
-    background-color: #333; /* Dark button for light theme */
-    color: #fff;
+.turqoise {
+    background-color: #12333A; 
+    color: #FA6400;
   }
   
-  .dark-theme {
-    background-color: #fa6400; /* Light button for dark theme */
-    color: #333;
+.orange {
+    background-color: #FA6400; 
+    color: #12333A;
   }
   
-  .theme-toggle-button:hover {
-    opacity: 0.9; /* Slight hover effect */
+.theme-toggle-button:hover {
+    opacity: 0.9; 
   }
   

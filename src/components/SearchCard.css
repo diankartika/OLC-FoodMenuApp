@@ -10,15 +10,44 @@ input {
 
 .SearchCard {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
 }
 
-button.search {
-    background-color: #f76301;
+.turqoise {
+    background-color: #12333A; 
     color: white;
+  }
+  
+.orange {
+    background-color: #FA6400; 
+    color: white;
+}
+
+.turqoise {
+    background-color: #12333A; 
+    color: white;
+  }
+  
+.orange {
+    background-color: #FA6400; 
+    color: white;
+}
+
+.search.disabled {
+    opacity: 0.5; 
+    cursor: not-allowed;
+  }
+
+.search {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin: 10px;
     border: none;
     padding: 9px 10px 9px 10px;
     border-radius: 2px;
-    font-size: 12px;
+    font-size: 0.65em;
   }

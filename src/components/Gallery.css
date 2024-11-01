@@ -1,0 +1,118 @@
+button {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 10%;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 5% 48px;
+    gap: 10px;
+    opacity: 0px;
+}
+
+button:hover {
+    background-color: #f7f7f7;
+    color: #3a1d13;
+    transition: 0.1s ease-in;
+}
+
+.turqoise {
+    background-color: #12333A; 
+    color: #FA6400;
+}
+
+.orange {
+    background-color: #FA6400; 
+    color: #12333A;
+}
+
+.h3-orange {
+    color: #12333A;
+}
+
+.h3-turqoise {
+    color: #FA6400;
+}
+
+h3 {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.2em;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #fa6400;
+}
+
+.recipe-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    height: 15vh;
+    width: 100%;
+    margin: 5%;
+}
+
+.recipe-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 27vw;
+    height: auto; 
+    background-color: #fff; 
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 30vh;
+}
+
+.recipe-gallery img {
+    width: 100%;
+    height: 30vh;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+.recipe-gallery:hover {
+    transform: scale(1.02);
+}
+
+@media screen and (max-width: 640px) {
+    .recipe-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        height: auto; 
+        background-color: #fff; 
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .recipe-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        height: auto; 
+        background-color: #fff; 
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+  }

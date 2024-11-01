@@ -7,14 +7,14 @@ function Header() {
   const { theme, handleToggleTheme } = useContext(ThemeContext);
 
   return (
-    <header>
+    <div className='header'>
       <button
-        className={`theme-toggle-button ${theme === 'light' ? 'light-theme' : 'dark-theme'}`}
+        className={`theme-toggle-button ${theme === 'turqoise' ? 'orange' : 'turqoise'}`}
         onClick={handleToggleTheme}
       >
-        Change Theme To {theme === 'light' ? 'Dark' : 'Light'} Mode
-      </button>
-    </header>
+        Change Theme
+      </button>      
+    </div>
   );
 }
 

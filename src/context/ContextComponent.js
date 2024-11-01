@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../App'
+import { StrictMode } from "react";
+import App from '../App';
 
 function ContextComponent() {
     const theme = useContext(ThemeContext)
