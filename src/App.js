@@ -16,7 +16,7 @@ function App() {
   const [favoritesInputValue, setFavoritesInputValue] = useState('');
 
   useEffect(() => {
-    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=19d778171ab448a8ae980e15c891f54d")
+    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=bc6eef2102b2482fb640ba9f77e52fbe")
       .then(response => {
         if (!response.ok) {
           throw new Error("Error fetching the recipes");
