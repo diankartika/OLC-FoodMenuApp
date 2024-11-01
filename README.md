@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-Food Menu App - OLC Project
+###Food Menu App - OLC Project
 
 #Overview
 The Food Menu App is a dynamic web application built using React.js that allows users to explore a variety of food options. By integrating the Spoonacular API, our app provides an extensive menu featuring a diverse range of recipes.
