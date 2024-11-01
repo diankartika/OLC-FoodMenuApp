@@ -1,14 +1,20 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import './SearchCard.css';
 import { ThemeContext } from '../App';
 
 const SearchFavorite = ({ inputValue, handleInputChange }) => {
   const { theme } = useContext(ThemeContext);
+  const [searchResult, setSearchResult] = useState("");
 
   const isDisabled = !inputValue; 
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSearchResult(inputValue); 
+  };
+
   return (
-    <form className="SearchCard">
+    <form className="SearchCard" onSubmit={handleSubmit}>
       <input
         className="input-col"
         type="text"
